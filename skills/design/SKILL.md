@@ -4,7 +4,7 @@ description: "Comprehensive design skill: brand identity, design tokens, UI styl
 argument-hint: "[design-type] [context]"
 license: MIT
 metadata:
-  author: AX추진팀
+  author: AI혁신팀
   version: "2.1.0"
 ---
 

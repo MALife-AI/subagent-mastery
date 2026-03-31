@@ -7,7 +7,7 @@ description:
   involving React Native, Expo, mobile performance, or native platform APIs.
 license: MIT
 metadata:
-  author: AX추진팀
+  author: AI혁신팀
   version: '1.0.0'
 ---
 

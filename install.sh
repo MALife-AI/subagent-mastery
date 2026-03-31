@@ -1,6 +1,6 @@
 #!/bin/bash
 # ============================================================
-# Subagent Mastery - 미래에셋 AX추진팀 Claude Code Skill Pack
+# Subagent Mastery - 미래에셋 AI혁신팀 Claude Code Skill Pack
 # 원라인 설치: curl -fsSL https://raw.githubusercontent.com/YOUR_ORG/subagent-mastery/main/install.sh | bash
 # ============================================================
 
@@ -20,7 +20,7 @@ TEMP_DIR=$(mktemp -d)
 echo ""
 echo -e "${ORANGE}╔══════════════════════════════════════════════╗${NC}"
 echo -e "${ORANGE}║${NC}  ${BLUE}Subagent Mastery${NC} — Claude Code Skill Pack   ${ORANGE}║${NC}"
-echo -e "${ORANGE}║${NC}  미래에셋 AX추진팀                             ${ORANGE}║${NC}"
+echo -e "${ORANGE}║${NC}  미래에셋 AI혁신팀                             ${ORANGE}║${NC}"
 echo -e "${ORANGE}╚══════════════════════════════════════════════╝${NC}"
 echo ""
 

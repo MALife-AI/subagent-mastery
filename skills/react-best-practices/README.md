@@ -6,7 +6,7 @@ Vercel 엔지니어링 팀의 React 및 Next.js 성능 최적화 가이드라인
 
 - **이름:** `vercel-react-best-practices`
 - **버전:** 1.0.0
-- **작성자:** AX추진팀
+- **작성자:** AI혁신팀
 
 ## 활용 시점
 

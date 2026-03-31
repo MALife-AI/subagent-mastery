@@ -4,7 +4,7 @@ description: Token architecture, component specifications, and slide generation.
 argument-hint: "[component or token]"
 license: MIT
 metadata:
-  author: AX추진팀
+  author: AI혁신팀
   version: "1.0.0"
 ---
 

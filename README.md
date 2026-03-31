@@ -1,6 +1,6 @@
 # Subagent Mastery
 
-**미래에셋 AX추진팀 Claude Code Skill Pack**
+**미래에셋 AI혁신팀 Claude Code Skill Pack**
 
 150개 이상의 전문 에이전트, 11개 스킬, 2개 룰, 3개 워크플로우 커맨드를 포함한 Claude Code 확장 팩입니다.
 
@@ -155,4 +155,4 @@ subagent-mastery/
 
 ## 라이선스
 
-MIT License - AX추진팀
+MIT License - AI혁신팀

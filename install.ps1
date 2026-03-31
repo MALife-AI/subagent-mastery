@@ -1,5 +1,5 @@
 # ============================================================
-# Subagent Mastery - 미래에셋 AX추진팀 Claude Code Skill Pack
+# Subagent Mastery - 미래에셋 AI혁신팀 Claude Code Skill Pack
 # 원라인 설치 (PowerShell):
 # irm https://raw.githubusercontent.com/YOUR_ORG/subagent-mastery/main/install.ps1 | iex
 # ============================================================
@@ -13,7 +13,7 @@ $TEMP_DIR = Join-Path $env:TEMP "subagent-mastery-$(Get-Date -Format 'yyyyMMdd-H
 Write-Host ""
 Write-Host "╔══════════════════════════════════════════════╗" -ForegroundColor DarkYellow
 Write-Host "║  Subagent Mastery — Claude Code Skill Pack   ║" -ForegroundColor DarkYellow
-Write-Host "║  미래에셋 AX추진팀                             ║" -ForegroundColor DarkYellow
+Write-Host "║  미래에셋 AI혁신팀                             ║" -ForegroundColor DarkYellow
 Write-Host "╚══════════════════════════════════════════════╝" -ForegroundColor DarkYellow
 Write-Host ""
 

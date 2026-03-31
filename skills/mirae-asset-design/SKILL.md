@@ -3,7 +3,7 @@ name: mirae-asset-design
 description: "미래에셋 공식 디지털 가이드라인 기반 디자인 스킬. 웹/모바일 UI, 배너, 이메일, 보고서 등 미래에셋 브랜드 아이덴티티에 맞는 디자인 생성 시 활용. 공식 컬러(Orange #F58220, Blue #043B72), 서체(Spoqa Han Sans), 로고 사용 규정, UI 컴포넌트 스펙을 포함."
 argument-hint: "[create|review|check] [args]"
 metadata:
-  author: AX추진팀
+  author: AI혁신팀
   version: "1.0.0"
 ---
 

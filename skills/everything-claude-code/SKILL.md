@@ -2,7 +2,7 @@
 name: everything-claude-code-conventions
 description: Development conventions and patterns for everything-claude-code. JavaScript project with conventional commits.
 metadata:
-  author: AX추진팀
+  author: AI혁신팀
 ---
 
 # Everything Claude Code Conventions
