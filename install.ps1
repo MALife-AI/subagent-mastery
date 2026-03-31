@@ -6,7 +6,7 @@
 
 $ErrorActionPreference = "Stop"
 
-$REPO_URL = "https://github.com/YOUR_ORG/subagent-mastery"
+$REPO_URL = "https://github.com/MALife-AI/subagent-mastery"
 $CLAUDE_DIR = Join-Path $env:USERPROFILE ".claude"
 $TEMP_DIR = Join-Path $env:TEMP "subagent-mastery-$(Get-Date -Format 'yyyyMMdd-HHmmss')"
 

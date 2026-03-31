@@ -13,7 +13,7 @@ GREEN='\033[0;32m'
 YELLOW='\033[0;33m'
 NC='\033[0m'
 
-REPO_URL="https://github.com/YOUR_ORG/subagent-mastery"
+REPO_URL="https://github.com/MALife-AI/subagent-mastery"
 CLAUDE_DIR="$HOME/.claude"
 TEMP_DIR=$(mktemp -d)
 
