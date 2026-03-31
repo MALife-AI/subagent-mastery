@@ -1,60 +1,47 @@
-# React Composition Patterns
+# Composition Patterns Skill
 
-A structured repository for React composition patterns that scale. These
-patterns help avoid boolean prop proliferation by using compound components,
-lifting state, and composing internals.
+확장 가능한 React 컴포지션 패턴 스킬입니다. Boolean prop 남용 리팩토링, 유연한 컴포넌트 라이브러리, 재사용 가능한 API 설계에 활용합니다.
 
-## Structure
+## 개요
 
-- `rules/` - Individual rule files (one per rule)
-  - `_sections.md` - Section metadata (titles, impacts, descriptions)
-  - `_template.md` - Template for creating new rules
-  - `area-description.md` - Individual rule files
-- `metadata.json` - Document metadata (version, organization, abstract)
-- **`AGENTS.md`** - Compiled output (generated)
+- **이름:** `vercel-composition-patterns`
+- **버전:** 1.0.0
+- **작성자:** AX추진팀
 
-## Rules
+## 활용 시점
 
-### Component Architecture (CRITICAL)
+- Compound Components, Render Props, Context Provider 관련 작업
+- Boolean prop이 과도하게 사용된 컴포넌트 리팩토링
+- React 19 API 변경 사항 적용
 
-- `architecture-avoid-boolean-props.md` - Don't add boolean props to customize
-  behavior
-- `architecture-compound-components.md` - Structure as compound components with
-  shared context
+## 룰 목록
 
-### State Management (HIGH)
+### Architecture (2개)
 
-- `state-lift-state.md` - Lift state into provider components
-- `state-context-interface.md` - Define clear context interfaces
-  (state/actions/meta)
-- `state-decouple-implementation.md` - Decouple state management from UI
+| 룰 | 설명 |
+|----|------|
+| [architecture-avoid-boolean-props](rules/architecture-avoid-boolean-props.md) | Boolean prop 남용 방지 |
+| [architecture-compound-components](rules/architecture-compound-components.md) | Compound Components 패턴 |
 
-### Implementation Patterns (MEDIUM)
+### Patterns (2개)
 
-- `patterns-children-over-render-props.md` - Prefer children over renderX props
-- `patterns-explicit-variants.md` - Create explicit component variants
+| 룰 | 설명 |
+|----|------|
+| [patterns-children-over-render-props](rules/patterns-children-over-render-props.md) | Render Props 대신 children 사용 |
+| [patterns-explicit-variants](rules/patterns-explicit-variants.md) | 명시적 Variant 정의 |
 
-## Core Principles
+### State (3개)
 
-1. **Composition over configuration** — Instead of adding props, let consumers
-   compose
-2. **Lift your state** — State in providers, not trapped in components
-3. **Compose your internals** — Subcomponents access context, not props
-4. **Explicit variants** — Create ThreadComposer, EditComposer, not Composer
-   with isThread
+| 룰 | 설명 |
+|----|------|
+| [state-context-interface](rules/state-context-interface.md) | Context 인터페이스 설계 |
+| [state-decouple-implementation](rules/state-decouple-implementation.md) | 구현 분리 패턴 |
+| [state-lift-state](rules/state-lift-state.md) | 상태 끌어올리기 |
 
-## Creating a New Rule
+### React 19 (1개)
 
-1. Copy `rules/_template.md` to `rules/area-description.md`
-2. Choose the appropriate area prefix:
-   - `architecture-` for Component Architecture
-   - `state-` for State Management
-   - `patterns-` for Implementation Patterns
-3. Fill in the frontmatter and content
-4. Ensure you have clear examples with explanations
+| 룰 | 설명 |
+|----|------|
+| [react19-no-forwardref](rules/react19-no-forwardref.md) | React 19에서 forwardRef 제거 |
 
-## Impact Levels
-
-- `CRITICAL` - Foundational patterns, prevents unmaintainable code
-- `HIGH` - Significant maintainability improvements
-- `MEDIUM` - Good practices for cleaner code
+[스킬 목록으로 돌아가기](../)
