@@ -9,6 +9,8 @@ Claude Code에서 사용할 수 있는 워크플로우 자동화 커맨드입니
 | [feature-development](feature-development.md) | 표준 기능 구현 워크플로우. 매니페스트, 스키마, 테스트, API 관련 파일을 다루며, 현재 상태 파악 -> 최소 변경 -> 검증 -> 요약 순서로 진행 |
 | [database-migration](database-migration.md) | 데이터베이스 스키마 변경 워크플로우. 마이그레이션 파일 생성, 스키마 정의 업데이트, 타입 생성/업데이트를 포함 |
 | [add-language-rules](add-language-rules.md) | 새 프로그래밍 언어 룰 추가 워크플로우. `rules/{language}/` 디렉토리에 coding-style, hooks, patterns, security, testing 가이드를 생성 |
+| [smart-skill](smart-skill.md) | 자연어 지시를 분석하여 최적의 스킬 조합으로 query를 재작성하고, 확인 후 실행 |
+| [skill-search](skill-search.md) | 자연어로 검색하면 관련 스킬을 찾아 기능과 사용법을 안내 |
 
 ## 사용법
 

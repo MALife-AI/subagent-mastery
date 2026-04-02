@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-orange: #F58220;
+  --color-brand-orange-light: #FFA54F;
+  --color-brand-blue: #043B72;
+  --color-brand-blue-light: #0A5CA8;
+  --color-brand-blue-dark: #032A54;
+  --font-family-sans: "Spoqa Han Sans Neo", system-ui, sans-serif;
+}
+
+body {
+  font-family: var(--font-family-sans);
+  background-color: #f8f9fb;
+}
+
+.markdown-body h1 { font-size: 1.5rem; font-weight: 700; margin: 1rem 0 0.5rem; }
+.markdown-body h2 { font-size: 1.25rem; font-weight: 600; margin: 1rem 0 0.5rem; }
+.markdown-body h3 { font-size: 1.1rem; font-weight: 600; margin: 0.75rem 0 0.4rem; }
+.markdown-body p { margin: 0.4rem 0; line-height: 1.7; }
+.markdown-body ul { list-style: disc; padding-left: 1.5rem; margin: 0.4rem 0; }
+.markdown-body ol { list-style: decimal; padding-left: 1.5rem; margin: 0.4rem 0; }
+.markdown-body li { margin: 0.2rem 0; line-height: 1.6; }
+.markdown-body code { background: #f1f5f9; padding: 0.15rem 0.4rem; border-radius: 4px; font-size: 0.875rem; }
+.markdown-body pre { background: #1e293b; color: #e2e8f0; padding: 1rem; border-radius: 8px; overflow-x: auto; margin: 0.5rem 0; }
+.markdown-body pre code { background: transparent; padding: 0; color: inherit; }
+.markdown-body table { width: 100%; border-collapse: collapse; margin: 0.5rem 0; }
+.markdown-body th, .markdown-body td { border: 1px solid #e2e8f0; padding: 0.5rem; text-align: left; font-size: 0.875rem; }
+.markdown-body th { background: #f1f5f9; font-weight: 600; }

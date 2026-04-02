@@ -1,0 +1,5 @@
+node_modules/
+marketplace/dist/
+marketplace/public/manifest.json
+.DS_Store
+*.log
