@@ -314,38 +314,38 @@ export function SkillCreatorPage() {
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 py-8">
       {/* Header */}
-      <div className="flex items-center justify-between mb-6">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6">
         <div>
-          <h2 className="text-2xl font-bold text-gray-900">스킬 생성</h2>
-          <p className="text-sm text-gray-500 mt-1">새로운 스킬을 만들고 팀과 공유하세요</p>
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-900">스킬 생성</h2>
+          <p className="text-xs sm:text-sm text-gray-500 mt-1">새로운 스킬을 만들고 팀과 공유하세요</p>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 flex-wrap">
           <button
             onClick={handleImportJson}
-            className="px-4 py-2 rounded-lg text-sm font-medium bg-gray-100 text-gray-700 hover:bg-gray-200 transition"
+            className="px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg text-xs sm:text-sm font-medium bg-gray-100 text-gray-700 hover:bg-gray-200 transition"
           >
             📂 불러오기
           </button>
           <button
             onClick={handleShare}
-            className="px-4 py-2 rounded-lg text-sm font-medium bg-brand-blue text-white hover:bg-brand-blue-light transition"
+            className="px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg text-xs sm:text-sm font-medium bg-brand-blue text-white hover:bg-brand-blue-light transition"
           >
-            {copied === 'share' ? '✓ 링크 복사됨!' : '🔗 공유 링크'}
+            {copied === 'share' ? '✓ 복사됨!' : '🔗 공유'}
           </button>
           {github.isLoggedIn ? (
             <button
               onClick={handleCommitToRepo}
               disabled={github.loading || !form.id}
-              className="px-4 py-2 rounded-lg text-sm font-medium bg-emerald-600 text-white hover:bg-emerald-700 disabled:opacity-40 disabled:cursor-not-allowed transition"
+              className="px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg text-xs sm:text-sm font-medium bg-emerald-600 text-white hover:bg-emerald-700 disabled:opacity-40 disabled:cursor-not-allowed transition"
             >
               {github.loading ? '⏳ 저장 중...' : '🚀 레포에 저장'}
             </button>
           ) : (
             <button
               onClick={() => setShowTokenInput(!showTokenInput)}
-              className="px-4 py-2 rounded-lg text-sm font-medium bg-gray-900 text-white hover:bg-gray-800 transition"
+              className="px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg text-xs sm:text-sm font-medium bg-gray-900 text-white hover:bg-gray-800 transition"
             >
-              🔑 GitHub 로그인
+              🔑 GitHub
             </button>
           )}
         </div>
@@ -353,14 +353,14 @@ export function SkillCreatorPage() {
 
       {/* GitHub 로그인 상태 */}
       {github.isLoggedIn && github.user && (
-        <div className="mb-4 bg-emerald-50 border border-emerald-200 rounded-lg px-4 py-2.5 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <img src={github.user.avatar_url} alt="" className="w-6 h-6 rounded-full" />
-            <span className="text-sm text-emerald-800 font-medium">{github.user.login}</span>
-            <span className="text-xs text-emerald-600">· {github.repoOwner}/{github.repoName}</span>
-            <span className="text-xs text-emerald-500">로그인 됨 — 스킬을 바로 레포에 커밋할 수 있습니다</span>
+        <div className="mb-4 bg-emerald-50 border border-emerald-200 rounded-lg px-3 sm:px-4 py-2.5 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
+            <img src={github.user.avatar_url} alt="" className="w-5 h-5 sm:w-6 sm:h-6 rounded-full" />
+            <span className="text-xs sm:text-sm text-emerald-800 font-medium">{github.user.login}</span>
+            <span className="text-[10px] sm:text-xs text-emerald-600">· {github.repoOwner}/{github.repoName}</span>
+            <span className="text-[10px] sm:text-xs text-emerald-500 hidden sm:inline">— 레포에 바로 커밋 가능</span>
           </div>
-          <button onClick={github.logout} className="text-xs text-emerald-600 hover:text-emerald-800 underline">로그아웃</button>
+          <button onClick={github.logout} className="text-xs text-emerald-600 hover:text-emerald-800 underline self-end sm:self-auto">로그아웃</button>
         </div>
       )}
 
@@ -427,12 +427,12 @@ export function SkillCreatorPage() {
       {/* Templates */}
       <div className="mb-6">
         <p className="text-xs text-gray-400 mb-2">템플릿으로 시작하기</p>
-        <div className="flex gap-2">
+        <div className="flex flex-wrap gap-2">
           {TEMPLATES.map(t => (
             <button
               key={t.label}
               onClick={() => { setForm(t.data); setActivePanel('edit') }}
-              className="px-4 py-2.5 rounded-lg text-sm bg-white border border-gray-200 hover:border-brand-orange/40 hover:shadow-sm transition flex items-center gap-2"
+              className="px-3 py-2 sm:px-4 sm:py-2.5 rounded-lg text-xs sm:text-sm bg-white border border-gray-200 hover:border-brand-orange/40 hover:shadow-sm transition flex items-center gap-1.5 sm:gap-2"
             >
               <span>{t.icon}</span>
               {t.label}
@@ -440,7 +440,7 @@ export function SkillCreatorPage() {
           ))}
           <button
             onClick={() => setForm(EMPTY_FORM)}
-            className="px-4 py-2.5 rounded-lg text-sm bg-white border border-gray-200 hover:border-gray-300 transition text-gray-500"
+            className="px-3 py-2 sm:px-4 sm:py-2.5 rounded-lg text-xs sm:text-sm bg-white border border-gray-200 hover:border-gray-300 transition text-gray-500"
           >
             초기화
           </button>
@@ -460,7 +460,7 @@ export function SkillCreatorPage() {
       )}
 
       {/* Panel tabs */}
-      <div className="flex gap-1 bg-gray-100 p-1 rounded-xl mb-6 max-w-md">
+      <div className="flex gap-1 bg-gray-100 p-1 rounded-xl mb-6 w-full sm:max-w-md">
         {([
           { key: 'edit', label: '편집', icon: '✏️' },
           { key: 'preview', label: '미리보기', icon: '👁️' },
