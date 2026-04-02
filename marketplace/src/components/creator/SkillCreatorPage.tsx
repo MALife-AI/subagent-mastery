@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import { Badge } from '../shared/Badge'
+import { useGitHub } from '../../hooks/useGitHub'
 
 interface SkillFormData {
   id: string
@@ -198,7 +199,11 @@ export function SkillCreatorPage() {
   const [activePanel, setActivePanel] = useState<'edit' | 'preview' | 'output'>('edit')
   const [copied, setCopied] = useState<string | null>(null)
   const [shareUrl, setShareUrl] = useState<string | null>(null)
+  const [showTokenInput, setShowTokenInput] = useState(false)
+  const [tokenInput, setTokenInput] = useState('')
+  const [commitStatus, setCommitStatus] = useState<{ type: 'success' | 'error'; message: string; url?: string } | null>(null)
   const formRef = useRef<HTMLDivElement>(null)
+  const github = useGitHub()
 
   // Load from share URL
   useEffect(() => {
@@ -275,6 +280,34 @@ export function SkillCreatorPage() {
     input.click()
   }
 
+  const handleGitHubLogin = async () => {
+    const result = await github.login(tokenInput)
+    if (result.success) {
+      setShowTokenInput(false)
+      setTokenInput('')
+      setCommitStatus({ type: 'success', message: result.message })
+    } else {
+      setCommitStatus({ type: 'error', message: result.message })
+    }
+    setTimeout(() => setCommitStatus(null), 4000)
+  }
+
+  const handleCommitToRepo = async () => {
+    if (!form.id) {
+      setCommitStatus({ type: 'error', message: '스킬 ID를 입력해주세요' })
+      setTimeout(() => setCommitStatus(null), 3000)
+      return
+    }
+    const msg = `feat: ${form.id} 스킬 ${form.version ? `v${form.version}` : ''} 추가`
+    const result = await github.commitSkill(form.id, generateSkillMd(form), msg)
+    setCommitStatus({ type: result.success ? 'success' : 'error', message: result.message, url: result.url })
+    if (result.success) {
+      setTimeout(() => setCommitStatus(null), 8000)
+    } else {
+      setTimeout(() => setCommitStatus(null), 5000)
+    }
+  }
+
   const skillMd = generateSkillMd(form)
   const installCmd = `mkdir -p ~/.claude/skills/${form.id || 'my-skill'} && cat > ~/.claude/skills/${form.id || 'my-skill'}/SKILL.md << 'SKILL_EOF'\n${skillMd}\nSKILL_EOF`
 
@@ -286,7 +319,7 @@ export function SkillCreatorPage() {
           <h2 className="text-2xl font-bold text-gray-900">스킬 생성</h2>
           <p className="text-sm text-gray-500 mt-1">새로운 스킬을 만들고 팀과 공유하세요</p>
         </div>
-        <div className="flex gap-2">
+        <div className="flex items-center gap-2">
           <button
             onClick={handleImportJson}
             className="px-4 py-2 rounded-lg text-sm font-medium bg-gray-100 text-gray-700 hover:bg-gray-200 transition"
@@ -299,8 +332,97 @@ export function SkillCreatorPage() {
           >
             {copied === 'share' ? '✓ 링크 복사됨!' : '🔗 공유 링크'}
           </button>
+          {github.isLoggedIn ? (
+            <button
+              onClick={handleCommitToRepo}
+              disabled={github.loading || !form.id}
+              className="px-4 py-2 rounded-lg text-sm font-medium bg-emerald-600 text-white hover:bg-emerald-700 disabled:opacity-40 disabled:cursor-not-allowed transition"
+            >
+              {github.loading ? '⏳ 저장 중...' : '🚀 레포에 저장'}
+            </button>
+          ) : (
+            <button
+              onClick={() => setShowTokenInput(!showTokenInput)}
+              className="px-4 py-2 rounded-lg text-sm font-medium bg-gray-900 text-white hover:bg-gray-800 transition"
+            >
+              🔑 GitHub 로그인
+            </button>
+          )}
         </div>
       </div>
+
+      {/* GitHub 로그인 상태 */}
+      {github.isLoggedIn && github.user && (
+        <div className="mb-4 bg-emerald-50 border border-emerald-200 rounded-lg px-4 py-2.5 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <img src={github.user.avatar_url} alt="" className="w-6 h-6 rounded-full" />
+            <span className="text-sm text-emerald-800 font-medium">{github.user.login}</span>
+            <span className="text-xs text-emerald-600">· {github.repoOwner}/{github.repoName}</span>
+            <span className="text-xs text-emerald-500">로그인 됨 — 스킬을 바로 레포에 커밋할 수 있습니다</span>
+          </div>
+          <button onClick={github.logout} className="text-xs text-emerald-600 hover:text-emerald-800 underline">로그아웃</button>
+        </div>
+      )}
+
+      {/* GitHub 토큰 입력 */}
+      {showTokenInput && !github.isLoggedIn && (
+        <div className="mb-4 bg-gray-50 border border-gray-200 rounded-xl p-5">
+          <h4 className="text-sm font-bold text-gray-900 mb-2">GitHub Personal Access Token 입력</h4>
+          <p className="text-xs text-gray-500 mb-3">
+            GitHub Settings → Developer settings → Personal access tokens → Fine-grained tokens에서
+            <strong> {github.repoOwner}/{github.repoName}</strong> 레포에 <strong>Contents read/write</strong> 권한이 있는 토큰을 생성하세요.
+          </p>
+          <div className="flex gap-2">
+            <input
+              type="password"
+              value={tokenInput}
+              onChange={e => setTokenInput(e.target.value)}
+              placeholder="github_pat_..."
+              className="flex-1 px-3 py-2 rounded-lg border border-gray-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand-orange/30 focus:border-brand-orange"
+              onKeyDown={e => e.key === 'Enter' && handleGitHubLogin()}
+            />
+            <button
+              onClick={handleGitHubLogin}
+              disabled={!tokenInput || github.loading}
+              className="px-4 py-2 rounded-lg text-sm font-medium bg-gray-900 text-white hover:bg-gray-800 disabled:opacity-40 transition"
+            >
+              {github.loading ? '확인 중...' : '연결'}
+            </button>
+            <button
+              onClick={() => { setShowTokenInput(false); setTokenInput('') }}
+              className="px-3 py-2 rounded-lg text-sm text-gray-500 hover:bg-gray-200 transition"
+            >
+              취소
+            </button>
+          </div>
+          <p className="text-[10px] text-gray-400 mt-2">토큰은 브라우저 localStorage에만 저장되며 외부로 전송되지 않습니다.</p>
+        </div>
+      )}
+
+      {/* 커밋 상태 알림 */}
+      {commitStatus && (
+        <div className={`mb-4 rounded-lg p-3 flex items-center justify-between ${
+          commitStatus.type === 'success'
+            ? 'bg-emerald-50 border border-emerald-200'
+            : 'bg-red-50 border border-red-200'
+        }`}>
+          <div>
+            <p className={`text-sm font-medium ${commitStatus.type === 'success' ? 'text-emerald-700' : 'text-red-700'}`}>
+              {commitStatus.type === 'success' ? '✅' : '❌'} {commitStatus.message}
+            </p>
+            {commitStatus.url && (
+              <a href={commitStatus.url} target="_blank" rel="noopener noreferrer" className="text-xs text-emerald-600 hover:underline mt-1 inline-block">
+                GitHub에서 확인하기 →
+              </a>
+            )}
+          </div>
+          <button onClick={() => setCommitStatus(null)} className={`${commitStatus.type === 'success' ? 'text-emerald-400' : 'text-red-400'} hover:opacity-70`}>
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      )}
 
       {/* Templates */}
       <div className="mb-6">
@@ -563,8 +685,25 @@ export function SkillCreatorPage() {
 
           {/* Share actions */}
           <div className="bg-white rounded-xl border border-gray-100 p-6">
-            <h3 className="text-sm font-bold text-gray-900 mb-4">공유</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <h3 className="text-sm font-bold text-gray-900 mb-4">공유 및 배포</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+              <button
+                onClick={github.isLoggedIn ? handleCommitToRepo : () => setShowTokenInput(true)}
+                disabled={github.loading}
+                className={`flex flex-col items-center gap-2 p-4 rounded-xl border-2 transition ${
+                  github.isLoggedIn
+                    ? 'border-emerald-200 bg-emerald-50 hover:border-emerald-400 hover:shadow-sm'
+                    : 'border-gray-200 hover:border-gray-300 hover:shadow-sm'
+                }`}
+              >
+                <span className="text-2xl">🚀</span>
+                <span className="text-sm font-medium text-gray-700">
+                  {github.isLoggedIn ? '레포에 저장' : 'GitHub 연결'}
+                </span>
+                <span className="text-[10px] text-gray-400">
+                  {github.isLoggedIn ? '커밋 → 자동 배포' : '로그인 필요'}
+                </span>
+              </button>
               <button
                 onClick={handleShare}
                 className="flex flex-col items-center gap-2 p-4 rounded-xl border border-gray-200 hover:border-brand-blue/30 hover:shadow-sm transition"

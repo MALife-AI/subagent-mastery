@@ -1,11 +1,14 @@
-import { readFileSync, readdirSync, writeFileSync, statSync, existsSync } from 'fs'
+import { readFileSync, readdirSync, writeFileSync, statSync, existsSync, mkdirSync } from 'fs'
 import { join, basename, dirname } from 'path'
 import { fileURLToPath } from 'url'
 import matter from 'gray-matter'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, '..', '..')
-const OUT = join(__dirname, '..', 'public', 'manifest.json')
+const PUBLIC_DIR = join(__dirname, '..', 'public')
+const OUT = join(PUBLIC_DIR, 'manifest.json')
+
+mkdirSync(PUBLIC_DIR, { recursive: true })
 
 // smart-skill.md에서 추출한 키워드 매핑
 const SKILL_KEYWORDS = {
