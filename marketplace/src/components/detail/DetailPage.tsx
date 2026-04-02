@@ -129,11 +129,11 @@ export function DetailPage() {
           </div>
 
           {/* Tools */}
-          {(agent?.tools.length || command?.allowedTools.length) && (
+          {(Array.isArray(agent?.tools) && agent.tools.length > 0 || Array.isArray(command?.allowedTools) && command.allowedTools.length > 0) && (
             <div className="bg-white rounded-xl border border-gray-100 p-5">
               <h3 className="text-sm font-bold text-gray-900 mb-3">사용 도구</h3>
               <div className="flex flex-wrap gap-1.5">
-                {(agent?.tools || command?.allowedTools || []).map(t => (
+                {(Array.isArray(agent?.tools) ? agent.tools : Array.isArray(command?.allowedTools) ? command.allowedTools : []).map(t => (
                   <Badge key={t} variant="blue">{t}</Badge>
                 ))}
               </div>
