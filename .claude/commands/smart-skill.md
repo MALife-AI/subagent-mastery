@@ -33,6 +33,7 @@ allowed_tools: ["Bash", "Read", "Write", "Grep", "Glob", "Agent"]
 | `ui-ux-pro-max` | UX, 사용성, 접근성, 인터랙션, 레이아웃 | UI/UX 디자인 인텔리전스 |
 | `web-design-guidelines` | 웹 디자인 리뷰, 접근성 감사, UI 검토 | 웹 인터페이스 가이드라인 리뷰 |
 | `everything-claude-code` | ECC, 개발 컨벤션 | ECC 프로젝트 개발 컨벤션 |
+| `skill-maker` | 스킬 만들기, 스킬 생성, create skill, new skill | 대화형 인터뷰 기반 스킬 빌더 |
 
 또한 시스템에 등록된 외부 스킬도 포함합니다:
 
@@ -111,6 +112,7 @@ allowed_tools: ["Bash", "Read", "Write", "Grep", "Glob", "Agent"]
 | `commit` | **변경 기록 담당자** — 작업 내용을 깔끔하게 저장하고 기록하는 역할 |
 | `simplify` | **코드 정리 전문가** — 작성된 코드를 더 깔끔하고 효율적으로 다듬는 역할 |
 | `everything-claude-code` | **프로젝트 규칙집** — 이 프로젝트에서 코드를 어떻게 작성해야 하는지 규칙을 알려주는 역할 |
+| `skill-maker` | **스킬 공장** — 한 문장만 알려주면 질문하고 설계해서 새 스킬을 만들어주는 역할 |
 
 ### Step 4: 실행
 
