@@ -15,8 +15,11 @@ Claude Code에서 사용할 수 있는 전문 스킬 모듈 모음입니다. 각
 | [mirae-asset-design](mirae-asset-design/) | 5 | - | 미래에셋 공식 디지털 가이드라인 기반 디자인 |
 | [react-best-practices](react-best-practices/) | - | 69 | Vercel 엔지니어링 React/Next.js 성능 최적화 |
 | [react-native-skills](react-native-skills/) | - | 39 | React Native/Expo 모바일 앱 최적화 |
+| [skill-maker](skill-maker/) | - | - | 한 문장 지시로 대화형 인터뷰 → 플래닝 → 스킬 생성 |
 | [slides](slides/) | 5 | - | HTML 프레젠테이션 (Chart.js, 디자인 토큰) |
 | [ui-styling](ui-styling/) | 7 | - | shadcn/ui + Tailwind CSS UI 스타일링 |
+| [ui-ux-pro-max](ui-ux-pro-max/) | 3 | - | 웹·모바일 UI/UX 지식 + Design Engineering · Impeccable · Taste Skill 철학 |
+| [web-design-guidelines](web-design-guidelines/) | - | - | Web Interface Guidelines 기반 UI 리뷰 및 접근성 감사 |
 
 ## 새로 통합된 디자인 지식 (외부 소스)
 

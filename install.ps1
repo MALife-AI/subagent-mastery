@@ -1,7 +1,7 @@
 # ============================================================
 # Subagent Mastery - 미래에셋 AI혁신팀 Claude Code Skill Pack
 # 원라인 설치 (PowerShell):
-# irm https://raw.githubusercontent.com/YOUR_ORG/subagent-mastery/main/install.ps1 | iex
+# irm https://raw.githubusercontent.com/MALife-AI/subagent-mastery/main/install.ps1 | iex
 # ============================================================
 
 $ErrorActionPreference = "Stop"

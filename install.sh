@@ -1,7 +1,7 @@
 #!/bin/bash
 # ============================================================
 # Subagent Mastery - 미래에셋 AI혁신팀 Claude Code Skill Pack
-# 원라인 설치: curl -fsSL https://raw.githubusercontent.com/YOUR_ORG/subagent-mastery/main/install.sh | bash
+# 원라인 설치: curl -fsSL https://raw.githubusercontent.com/MALife-AI/subagent-mastery/main/install.sh | bash
 # ============================================================
 
 set -e
