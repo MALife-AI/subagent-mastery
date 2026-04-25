@@ -18,9 +18,19 @@ Claude Code에서 사용할 수 있는 전문 스킬 모듈 모음입니다. 각
 | [slides](slides/) | 5 | - | HTML 프레젠테이션 (Chart.js, 디자인 토큰) |
 | [ui-styling](ui-styling/) | 7 | - | shadcn/ui + Tailwind CSS UI 스타일링 |
 
+## 새로 통합된 디자인 지식 (외부 소스)
+
+UI-UX-Pro-Max 스킬에 다음 3가지 디자인 철학이 reference로 통합되었습니다:
+
+- **design-engineering.md**: 디자인 엔지니어링 철학, 애니메이션 의사결정 프레임워크, 컴포넌트 빌딩 원칙
+- **impeccable-system.md**: 23개 설계 명령어, 25개 안티패턴 감지, 컨텍스트 시스템
+- **taste-skill-metrics.md**: 메트릭 기반 디자인, 3가지 조정 파라미터, RSC 우선 접근
+
+이 지식들은 `/polish` 커맨드를 통해 통합 활용됩니다.
+
 ## 총계
 
-- 레퍼런스: 54개
+- 레퍼런스: 57개 (기존 54개 + 통합 3개)
 - 룰: 118개
 
 [메인으로 돌아가기](../)

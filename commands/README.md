@@ -11,6 +11,7 @@ Claude Code에서 사용할 수 있는 워크플로우 자동화 커맨드입니
 | [add-language-rules](add-language-rules.md) | 새 프로그래밍 언어 룰 추가 워크플로우. `rules/{language}/` 디렉토리에 coding-style, hooks, patterns, security, testing 가이드를 생성 |
 | [smart-skill](smart-skill.md) | 자연어 지시를 분석하여 최적의 스킬 조합으로 query를 재작성하고, 확인 후 실행 |
 | [skill-search](skill-search.md) | 자연어로 검색하면 관련 스킬을 찾아 기능과 사용법을 안내 |
+| [polish](../.claude/commands/polish.md) | **NEW** UI/UX 종합 폴리싱. 모든 디자인 스킬(ui-ux-pro-max, composition-patterns, design-system 등) + 외부 디자인 철학(Design Engineering, Impeccable, Taste Skill)을 통합 활용하여 인터페이스를 프로덕션 수준으로 완성 |
 
 ## 사용법
 
