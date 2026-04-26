@@ -45,6 +45,9 @@ argument-hint: "[검색어 또는 하고 싶은 작업 설명]"
 | `ui-styling` | UI, shadcn, Tailwind, 스타일링, 다크모드, 폼, 테이블 | shadcn/ui + Tailwind CSS. 접근성 컴포넌트(다이얼로그, 드롭다운, 폼, 테이블), 테마, 다크모드 |
 | `ui-ux-pro-max` | UX, 사용성, 접근성, 레이아웃, 대시보드, 랜딩페이지 | 50+ 스타일, 161 컬러팔레트, 57 폰트 페어링, 99 UX 가이드라인, 25 차트 타입. 10개 기술 스택 지원 |
 | `web-design-guidelines` | 웹 디자인 리뷰, 접근성 감사, UI 검토, 베스트 프랙티스 | 웹 인터페이스 가이드라인 준수 여부 리뷰. 접근성, UX 감사 |
+| `production-design` | 인터페이스 설계, 폴리싱, audit, critique, 색상 전략, AI slop, 프로덕션 | 프로덕션급 프론트엔드 설계. 24개 커맨드(craft/shape/audit/polish/bolder/quieter 등), OKLCH 색상 전략, AI slop 감지, PRODUCT.md/DESIGN.md 컨텍스트, 라이브 개발 모드 |
+| `animation-engineering` | 애니메이션, easing, 모션, 인터랙션, 컴포넌트, 마이크로, spring, 제스처 | 애니메이션 엔지니어링. 빈도 기반 의사결정, 커스텀 easing, spring 물리, CSS Transform/clip-path, 제스처 드래그, 성능 규칙, Sonner 원칙 |
+| `design-quality` | 안티패턴, AI 제네릭, 레이아웃 변동성, 모션 강도, 밀도, bento, 프리미엄 | 메트릭 기반 디자인. DESIGN_VARIANCE/MOTION_INTENSITY/VISUAL_DENSITY 3축 조정, AI Tells 금지 패턴, Creative Arsenal 40+ 인터랙션 레시피 |
 
 #### 외부 스킬 (시스템 등록)
 
@@ -113,6 +116,9 @@ argument-hint: "[검색어 또는 하고 싶은 작업 설명]"
 | `commit` | 작업 내용을 깔끔하게 저장·기록하는 **변경 기록 담당자** |
 | `simplify` | 코드를 더 깔끔하고 효율적으로 다듬는 **코드 정리 전문가** |
 | `everything-claude-code` | 프로젝트 코드 작성 규칙을 알려주는 **규칙집** |
+| `production-design` | 인터페이스를 프로덕션 수준으로 다듬는 **수석 디자이너** |
+| `animation-engineering` | 애니메이션과 인터랙션을 자연스럽게 만드는 **모션 전문가** |
+| `design-quality` | AI가 만든 것처럼 보이지 않게 품질을 높이는 **디자인 감별사** |
 
 ### Step 4: 추가 탐색 제안
 

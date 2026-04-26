@@ -33,6 +33,10 @@ allowed_tools: ["Bash", "Read", "Write", "Grep", "Glob", "Agent"]
 | `ui-ux-pro-max` | UX, 사용성, 접근성, 인터랙션, 레이아웃 | UI/UX 디자인 인텔리전스 |
 | `web-design-guidelines` | 웹 디자인 리뷰, 접근성 감사, UI 검토 | 웹 인터페이스 가이드라인 리뷰 |
 | `everything-claude-code` | ECC, 개발 컨벤션 | ECC 프로젝트 개발 컨벤션 |
+| `skill-maker` | 스킬 만들기, 스킬 생성, create skill, new skill | 대화형 인터뷰 기반 스킬 빌더 |
+| `production-design` | 인터페이스 설계, 폴리싱, audit, critique, 색상, AI slop, 프로덕션 | 프로덕션급 프론트엔드 설계 (24개 커맨드) |
+| `animation-engineering` | 애니메이션, easing, 모션, spring, 제스처, 마이크로 인터랙션 | 애니메이션 엔지니어링 철학 |
+| `design-quality` | 안티패턴, AI 제네릭, 레이아웃, 모션 강도, 밀도, bento | 메트릭 기반 디자인 (AI Tells 금지) |
 
 또한 시스템에 등록된 외부 스킬도 포함합니다:
 
@@ -111,6 +115,10 @@ allowed_tools: ["Bash", "Read", "Write", "Grep", "Glob", "Agent"]
 | `commit` | **변경 기록 담당자** — 작업 내용을 깔끔하게 저장하고 기록하는 역할 |
 | `simplify` | **코드 정리 전문가** — 작성된 코드를 더 깔끔하고 효율적으로 다듬는 역할 |
 | `everything-claude-code` | **프로젝트 규칙집** — 이 프로젝트에서 코드를 어떻게 작성해야 하는지 규칙을 알려주는 역할 |
+| `skill-maker` | **스킬 공장** — 한 문장만 알려주면 질문하고 설계해서 새 스킬을 만들어주는 역할 |
+| `production-design` | **수석 디자이너** — 인터페이스를 프로덕션 수준으로 다듬고, AI가 만든 느낌을 제거해주는 역할 |
+| `animation-engineering` | **모션 전문가** — 애니메이션과 인터랙션을 물리 법칙처럼 자연스럽게 만들어주는 역할 |
+| `design-quality` | **디자인 감별사** — AI 특유의 제네릭 패턴을 감지하고 프리미엄 품질로 교정해주는 역할 |
 
 ### Step 4: 실행
 
