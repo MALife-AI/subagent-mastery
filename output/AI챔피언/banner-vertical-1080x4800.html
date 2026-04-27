@@ -1,750 +1,1064 @@
 <!doctype html>
 <html lang="ko">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=1080, initial-scale=1" />
-<title>AI CHAMPION 2026 — 미래에셋생명 모집 배너</title>
-<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
-<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css" rel="stylesheet" />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
-<style>
-  :root {
-    /* 미래에셋 CI */
-    --ma-orange: #F58220;
-    --ma-orange-2: #CB6015;
-    --ma-orange-light: #FAAF72;
-    --ma-blue: #043B72;
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1080, initial-scale=1" />
+    <title>AI CHAMPION 2026 — 미래에셋생명 모집 배너</title>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        /* 미래에셋 CI */
+        --ma-orange: #f58220;
+        --ma-orange-2: #cb6015;
+        --ma-orange-light: #faaf72;
+        --ma-blue: #043b72;
 
-    /* 다크 배경 톤 (대비 강화) */
-    --bg: #0E2A4A;              /* 메인 미드 네이비 */
-    --bg-alt: #12355B;          /* 밝은 섹션용 */
-    --card: #19406B;            /* 카드 배경 (가독성↑) */
-    --card-2: #1F4B7C;          /* 카드 hover/강조 */
-    --deep: #07203C;            /* 최하단용 */
+        /* 다크 배경 톤 (대비 강화) */
+        --bg: #0e2a4a; /* 메인 미드 네이비 */
+        --bg-alt: #12355b; /* 밝은 섹션용 */
+        --card: #19406b; /* 카드 배경 (가독성↑) */
+        --card-2: #1f4b7c; /* 카드 hover/강조 */
+        --deep: #07203c; /* 최하단용 */
 
-    --paper: #F5F1EA;           /* 화이트 섹션(종이톤) */
-    --ink: #0A0A0A;
-    --ink-2: #222222;
-    --ink-3: #4A4A4A;
+        --paper: #f5f1ea; /* 화이트 섹션(종이톤) */
+        --ink: #0a0a0a;
+        --ink-2: #222222;
+        --ink-3: #4a4a4a;
 
-    --line: rgba(255,255,255,0.16);
-    --line-strong: rgba(255,255,255,0.24);
-    --line-dark: rgba(10,26,51,0.14);
+        --line: rgba(255, 255, 255, 0.16);
+        --line-strong: rgba(255, 255, 255, 0.24);
+        --line-dark: rgba(10, 26, 51, 0.14);
 
-    /* 텍스트 콘트라스트 단계 */
-    --text-1: #FFFFFF;          /* 메인 텍스트 */
-    --text-2: rgba(255,255,255,0.86);
-    --text-3: rgba(255,255,255,0.70);
-    --text-4: rgba(255,255,255,0.54);
-  }
+        /* 텍스트 콘트라스트 단계 */
+        --text-1: #ffffff; /* 메인 텍스트 */
+        --text-2: rgba(255, 255, 255, 0.86);
+        --text-3: rgba(255, 255, 255, 0.7);
+        --text-4: rgba(255, 255, 255, 0.54);
+      }
 
-  * { box-sizing: border-box; }
-  html, body { margin: 0; padding: 0; background: #0A2240; }
-  body {
-    font-family: 'Pretendard Variable', 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
-    color: var(--text-1);
-    -webkit-font-smoothing: antialiased;
-    text-rendering: geometricPrecision;
-    display: flex;
-    justify-content: center;
-  }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: #0a2240;
+      }
+      body {
+        font-family:
+          "Pretendard Variable",
+          "Pretendard",
+          -apple-system,
+          BlinkMacSystemFont,
+          sans-serif;
+        color: var(--text-1);
+        -webkit-font-smoothing: antialiased;
+        text-rendering: geometricPrecision;
+        display: flex;
+        justify-content: center;
+      }
 
-  .banner {
-    width: 1080px;
-    background: var(--bg);
-    color: var(--text-1);
-    position: relative;
-    overflow: hidden;
-  }
+      .banner {
+        width: 1080px;
+        background: var(--bg);
+        color: var(--text-1);
+        position: relative;
+        overflow: hidden;
+      }
 
-  .section { padding: 0 72px; position: relative; z-index: 2; }
+      .section {
+        padding: 0 72px;
+        position: relative;
+        z-index: 2;
+      }
 
-  .eyebrow {
-    display: inline-flex; align-items: center; gap: 12px;
-    font-size: 13px; font-weight: 700; letter-spacing: 0.22em;
-    color: var(--ma-orange); text-transform: uppercase;
-    font-family: 'JetBrains Mono', monospace;
-  }
-  .eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--ma-orange); }
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.22em;
+        color: var(--ma-orange);
+        text-transform: uppercase;
+        font-family: "JetBrains Mono", monospace;
+      }
+      .eyebrow::before {
+        content: "";
+        width: 28px;
+        height: 1px;
+        background: var(--ma-orange);
+      }
 
-  .h2 { font-size: 42px; line-height: 1.25; font-weight: 800; letter-spacing: -0.02em; margin: 18px 0 22px; color: var(--text-1); }
-  .h2 em { font-style: normal; color: var(--ma-orange); font-weight: 800; }
+      .h2 {
+        font-size: 42px;
+        line-height: 1.25;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        margin: 18px 0 22px;
+        color: var(--text-1);
+      }
+      .h2 em {
+        font-style: normal;
+        color: var(--ma-orange);
+        font-weight: 800;
+      }
 
-  .body { font-size: 18px; line-height: 1.78; color: var(--text-2); font-weight: 400; }
-  .body + .body { margin-top: 14px; }
-  .body strong { color: var(--text-1); font-weight: 700; }
-  .body .hi { color: #FFF; font-weight: 700; border-bottom: 2px solid var(--ma-orange); padding-bottom: 1px; }
+      .body {
+        font-size: 18px;
+        line-height: 1.78;
+        color: var(--text-2);
+        font-weight: 400;
+      }
+      .body + .body {
+        margin-top: 14px;
+      }
+      .body strong {
+        color: var(--text-1);
+        font-weight: 700;
+      }
+      .body .hi {
+        color: #fff;
+        font-weight: 700;
+        border-bottom: 2px solid var(--ma-orange);
+        padding-bottom: 1px;
+      }
 
-  /* 1. TOP BAR */
-  .topbar {
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 40px 72px 0;
-    font-size: 13px; font-weight: 600; letter-spacing: 0.18em;
-    text-transform: uppercase; color: var(--text-3);
-    font-family: 'JetBrains Mono', monospace;
-  }
-  .topbar .logo-area { display: flex; align-items: center; gap: 14px; }
-  .logo-mark {
-    width: 32px; height: 32px; border-radius: 6px;
-    background: #FFF;
-    display: flex; align-items: center; justify-content: center;
-    color: var(--deep);
-    font-weight: 800; font-size: 13px; letter-spacing: 0.04em;
-    font-family: 'Inter', sans-serif;
-  }
-  .logo-text { color: var(--text-1); font-weight: 700; font-size: 13px; letter-spacing: 0.18em; }
-  .logo-text span { color: var(--ma-orange); }
+      /* 1. TOP BAR */
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 40px 72px 0;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--text-3);
+        font-family: "JetBrains Mono", monospace;
+      }
+      .topbar .logo-area {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+      .logo-mark {
+        width: 32px;
+        height: 32px;
+        border-radius: 6px;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--deep);
+        font-weight: 800;
+        font-size: 13px;
+        letter-spacing: 0.04em;
+        font-family: "Inter", sans-serif;
+      }
+      .logo-text {
+        color: var(--text-1);
+        font-weight: 700;
+        font-size: 13px;
+        letter-spacing: 0.18em;
+      }
+      .logo-text span {
+        color: var(--ma-orange);
+      }
 
-  /* 2. HERO */
-  .hero {
-    padding: 64px 72px 100px;
-    position: relative;
-    border-bottom: 1px solid var(--line);
-  }
-  .hero-bg {
-    position: absolute; inset: 0;
-    background:
-      radial-gradient(600px 400px at 88% 18%, rgba(245,130,32,0.22), transparent 65%),
-      radial-gradient(800px 500px at 10% 80%, rgba(4,59,114,0.30), transparent 70%);
-    pointer-events: none;
-  }
-  .hero-grid {
-    position: absolute; inset: 0;
-    background-image:
-      linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
-    background-size: 72px 72px;
-    mask-image: linear-gradient(180deg, #000 0%, #000 70%, transparent);
-    pointer-events: none;
-  }
-  .hero-inner { position: relative; z-index: 2; }
+      /* 2. HERO */
+      .hero {
+        padding: 64px 72px 100px;
+        position: relative;
+        border-bottom: 1px solid var(--line);
+      }
+      .hero-bg {
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(
+            600px 400px at 88% 18%,
+            rgba(245, 130, 32, 0.22),
+            transparent 65%
+          ),
+          radial-gradient(
+            800px 500px at 10% 80%,
+            rgba(4, 59, 114, 0.3),
+            transparent 70%
+          );
+        pointer-events: none;
+      }
+      .hero-grid {
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+        background-size: 72px 72px;
+        mask-image: linear-gradient(180deg, #000 0%, #000 70%, transparent);
+        pointer-events: none;
+      }
+      .hero-inner {
+        position: relative;
+        z-index: 2;
+      }
 
-  .kicker {
-    display: inline-flex; align-items: center; gap: 10px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12px; font-weight: 700; letter-spacing: 0.24em;
-    color: var(--ma-orange);
-    text-transform: uppercase;
-    margin-top: 24px;
-  }
-  .kicker .dot { width: 6px; height: 6px; background: var(--ma-orange); border-radius: 50%; box-shadow: 0 0 0 4px rgba(245,130,32,0.22); }
-  .kicker .sep { color: var(--text-4); }
+      .kicker {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.24em;
+        color: var(--ma-orange);
+        text-transform: uppercase;
+        margin-top: 24px;
+      }
+      .kicker .dot {
+        width: 6px;
+        height: 6px;
+        background: var(--ma-orange);
+        border-radius: 50%;
+        box-shadow: 0 0 0 4px rgba(245, 130, 32, 0.22);
+      }
+      .kicker .sep {
+        color: var(--text-4);
+      }
 
-  .hero-title {
-    font-family: 'Inter', 'Pretendard Variable', sans-serif;
-    font-size: 116px; line-height: 1.02;
-    letter-spacing: -0.035em;
-    font-weight: 800;
-    margin: 26px 0 0;
-    display: flex; flex-direction: column;
-  }
-  .hero-title .l-1 { color: var(--text-1); font-weight: 800; font-size: 96px; }
-  .hero-title .l-2 { color: var(--text-1); margin-top: 2px; }
-  .hero-title .l-3 {
-    color: var(--ma-orange);
-    font-weight: 800;
-    margin-top: 2px;
-    font-size: 96px;
-  }
+      .hero-title {
+        font-family: "Inter", "Pretendard Variable", sans-serif;
+        font-size: 116px;
+        line-height: 1.02;
+        letter-spacing: -0.035em;
+        font-weight: 800;
+        margin: 26px 0 0;
+        display: flex;
+        flex-direction: column;
+      }
+      .hero-title .l-1 {
+        color: var(--text-1);
+        font-weight: 800;
+        font-size: 96px;
+      }
+      .hero-title .l-2 {
+        color: var(--text-1);
+        margin-top: 2px;
+      }
+      .hero-title .l-3 {
+        color: var(--ma-orange);
+        font-weight: 800;
+        margin-top: 2px;
+        font-size: 96px;
+      }
 
-  .hero-ko {
-    font-size: 26px; line-height: 1.45; font-weight: 700;
-    letter-spacing: -0.015em; margin-top: 40px;
-    color: var(--text-2);
-  }
-  .hero-ko strong { color: var(--ma-orange); font-weight: 800; }
+      .hero-ko {
+        font-size: 26px;
+        line-height: 1.45;
+        font-weight: 700;
+        letter-spacing: -0.015em;
+        margin-top: 40px;
+        color: var(--text-2);
+      }
+      .hero-ko strong {
+        color: var(--ma-orange);
+        font-weight: 800;
+      }
 
-  /* 3. 기본 카드 - 정의 섹션 */
-  .about {
-    padding: 90px 72px 80px;
-    background: var(--bg-alt);
-    position: relative;
-  }
+      /* 3. 기본 카드 - 정의 섹션 */
+      .about {
+        padding: 90px 72px 80px;
+        background: var(--bg-alt);
+        position: relative;
+      }
 
-  /* 4. 주요 역할 */
-  .roles { padding: 80px 72px 90px; background: var(--bg); }
-  .roles-grid { display: flex; flex-direction: column; gap: 14px; margin-top: 30px; }
-  .role-card {
-    background: var(--card);
-    border: 1px solid var(--line);
-    border-radius: 18px;
-    padding: 30px 32px;
-    display: grid;
-    grid-template-columns: 82px 1fr;
-    gap: 24px;
-    align-items: start;
-    position: relative;
-    overflow: hidden;
-  }
-  .role-card::before {
-    content: '';
-    position: absolute; left: 0; top: 0; bottom: 0;
-    width: 4px; background: var(--ma-orange);
-  }
-  .role-num {
-    font-family: 'Inter', sans-serif;
-    font-size: 52px; line-height: 0.95;
-    color: var(--ma-orange);
-    letter-spacing: -0.04em;
-    font-weight: 800;
-  }
-  .role-title { font-size: 22px; font-weight: 800; margin: 2px 0 10px; letter-spacing: -0.015em; color: var(--text-1); }
-  .role-desc { font-size: 16px; line-height: 1.7; color: var(--text-2); }
-  .role-desc strong { color: var(--text-1); font-weight: 700; }
+      /* 4. 주요 역할 */
+      .roles {
+        padding: 80px 72px 90px;
+        background: var(--bg);
+      }
+      .roles-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        margin-top: 30px;
+      }
+      .role-card {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 30px 32px;
+        display: grid;
+        grid-template-columns: 82px 1fr;
+        gap: 24px;
+        align-items: start;
+        position: relative;
+        overflow: hidden;
+      }
+      .role-card::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 4px;
+        background: var(--ma-orange);
+      }
+      .role-num {
+        font-family: "Inter", sans-serif;
+        font-size: 52px;
+        line-height: 0.95;
+        color: var(--ma-orange);
+        letter-spacing: -0.04em;
+        font-weight: 800;
+      }
+      .role-title {
+        font-size: 22px;
+        font-weight: 800;
+        margin: 2px 0 10px;
+        letter-spacing: -0.015em;
+        color: var(--text-1);
+      }
+      .role-desc {
+        font-size: 16px;
+        line-height: 1.7;
+        color: var(--text-2);
+      }
+      .role-desc strong {
+        color: var(--text-1);
+        font-weight: 700;
+      }
 
-  /* 5. 모집 개요 (차분한 정보지 스타일) */
-  .recruit {
-    padding: 80px 72px 80px;
-    background: var(--paper);
-    color: var(--ink);
-  }
-  .section-num {
-    display: inline-block;
-    font-family: 'Inter', sans-serif;
-    font-size: 12px; font-weight: 800; letter-spacing: 0.12em;
-    color: var(--ma-orange-2);
-    margin-bottom: 14px;
-  }
-  .recruit h2 {
-    font-size: 36px; line-height: 1.25; font-weight: 800;
-    letter-spacing: -0.02em; margin: 0 0 44px;
-    color: var(--ink);
-  }
+      /* 5. 모집 개요 (차분한 정보지 스타일) */
+      .recruit {
+        padding: 80px 72px 80px;
+        background: var(--paper);
+        color: var(--ink);
+      }
+      .section-num {
+        display: inline-block;
+        font-family: "Inter", sans-serif;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        color: var(--ma-orange-2);
+        margin-bottom: 14px;
+      }
+      .recruit h2 {
+        font-size: 36px;
+        line-height: 1.25;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        margin: 0 0 44px;
+        color: var(--ink);
+      }
 
-  /* 정보 리스트 (라벨 : 값) */
-  .info-list {
-    border-top: 1px solid rgba(10,26,51,0.18);
-  }
-  .info-list .row {
-    display: grid;
-    grid-template-columns: 140px 1fr;
-    gap: 24px;
-    padding: 22px 0;
-    border-bottom: 1px solid rgba(10,26,51,0.12);
-    align-items: baseline;
-  }
-  .info-list .lbl {
-    font-size: 14px; font-weight: 700;
-    color: var(--ink-3);
-    letter-spacing: -0.005em;
-  }
-  .info-list .val {
-    font-size: 17px; font-weight: 600;
-    color: var(--ink);
-    line-height: 1.6;
-    letter-spacing: -0.01em;
-  }
-  .info-list .val strong { font-weight: 800; color: var(--ink); }
-  .info-list .val .hl { color: var(--ma-orange-2); font-weight: 800; }
-  .info-list .val .sub {
-    display: block;
-    margin-top: 4px;
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--ink-3);
-  }
+      /* 정보 리스트 (라벨 : 값) */
+      .info-list {
+        border-top: 1px solid rgba(10, 26, 51, 0.18);
+      }
+      .info-list .row {
+        display: grid;
+        grid-template-columns: 140px 1fr;
+        gap: 24px;
+        padding: 22px 0;
+        border-bottom: 1px solid rgba(10, 26, 51, 0.12);
+        align-items: baseline;
+      }
+      .info-list .lbl {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--ink-3);
+        letter-spacing: -0.005em;
+      }
+      .info-list .val {
+        font-size: 17px;
+        font-weight: 600;
+        color: var(--ink);
+        line-height: 1.6;
+        letter-spacing: -0.01em;
+      }
+      .info-list .val strong {
+        font-weight: 800;
+        color: var(--ink);
+      }
+      .info-list .val .hl {
+        color: var(--ma-orange-2);
+        font-weight: 800;
+      }
+      .info-list .val .sub {
+        display: block;
+        margin-top: 4px;
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--ink-3);
+      }
 
-  /* 선발 기준 (단순 리스트) */
-  .criteria-list {
-    display: flex; flex-direction: column; gap: 8px;
-  }
-  .cri-line {
-    font-size: 15px;
-    color: var(--ink-2);
-    line-height: 1.6;
-    letter-spacing: -0.005em;
-  }
-  .cri-line strong {
-    color: var(--ink);
-    font-weight: 800;
-    margin-right: 6px;
-  }
-  .cri-line .cri-pct {
-    display: inline-block;
-    font-size: 12px;
-    font-weight: 700;
-    color: var(--ma-orange-2);
-    margin-left: 4px;
-    letter-spacing: 0;
-  }
+      /* 선발 기준 (단순 리스트) */
+      .criteria-list {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .cri-line {
+        font-size: 15px;
+        color: var(--ink-2);
+        line-height: 1.6;
+        letter-spacing: -0.005em;
+      }
+      .cri-line strong {
+        color: var(--ink);
+        font-weight: 800;
+        margin-right: 6px;
+      }
+      .cri-line .cri-pct {
+        display: inline-block;
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--ma-orange-2);
+        margin-left: 4px;
+        letter-spacing: 0;
+      }
 
-  .recruit-note {
-    margin-top: 10px;
-    font-size: 13px; color: var(--ink-3); line-height: 1.6;
-  }
+      .recruit-note {
+        margin-top: 10px;
+        font-size: 13px;
+        color: var(--ink-3);
+        line-height: 1.6;
+      }
 
-  /* 지원 방식 - 한 줄 간소형 */
-  .apply-simple {
-    display: flex; flex-direction: column; gap: 6px;
-  }
-  .apply-simple .line {
-    font-size: 14px; color: var(--ink-2); line-height: 1.6;
-    letter-spacing: -0.005em;
-  }
-  .apply-simple .line strong {
-    font-weight: 800; color: var(--ink);
-    margin-right: 8px;
-  }
-  .apply-simple .line .mini-badge {
-    display: inline-block;
-    margin-left: 6px;
-    font-size: 10px; font-weight: 700;
-    letter-spacing: 0.04em;
-    color: var(--ma-orange-2);
-    background: rgba(245,130,32,0.12);
-    padding: 2px 6px;
-    border-radius: 3px;
-    vertical-align: 1px;
-  }
+      /* 지원 방식 - 한 줄 간소형 */
+      .apply-simple {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .apply-simple .line {
+        font-size: 14px;
+        color: var(--ink-2);
+        line-height: 1.6;
+        letter-spacing: -0.005em;
+      }
+      .apply-simple .line strong {
+        font-weight: 800;
+        color: var(--ink);
+        margin-right: 8px;
+      }
+      .apply-simple .line .mini-badge {
+        display: inline-block;
+        margin-left: 6px;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        color: var(--ma-orange-2);
+        background: rgba(245, 130, 32, 0.12);
+        padding: 2px 6px;
+        border-radius: 3px;
+        vertical-align: 1px;
+      }
 
-  /* 6. 프로그램 과정 타임라인 */
-  .timeline-sec { padding: 90px 72px 80px; background: var(--bg); }
-  .months {
-    position: relative;
-    margin-top: 36px;
-    padding-left: 28px;
-  }
-  .months::before {
-    content: '';
-    position: absolute; left: 9px; top: 6px; bottom: 6px;
-    width: 2px; background: var(--line-strong);
-  }
-  .month {
-    position: relative;
-    padding: 22px 0 28px 0;
-    border-bottom: 1px dashed rgba(255,255,255,0.14);
-  }
-  .month:last-child { border-bottom: 0; }
-  .month::before {
-    content: '';
-    position: absolute; left: -28px; top: 28px;
-    width: 20px; height: 20px; border-radius: 50%;
-    background: var(--bg);
-    border: 3px solid var(--ma-orange);
-  }
-  .month .head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 10px; flex-wrap: wrap; }
-  .month .m-en {
-    font-family: 'Inter', sans-serif;
-    font-size: 22px; letter-spacing: -0.01em;
-    color: var(--ma-orange);
-    font-weight: 800;
-  }
-  .month .m-ko { font-size: 20px; font-weight: 800; color: var(--text-1); letter-spacing: -0.015em; }
-  .month .m-desc { font-size: 15px; line-height: 1.75; color: var(--text-2); }
-  .month .m-desc strong { color: var(--text-1); font-weight: 700; }
+      /* 6. 프로그램 과정 타임라인 */
+      .timeline-sec {
+        padding: 90px 72px 80px;
+        background: var(--bg);
+      }
+      .months {
+        position: relative;
+        margin-top: 36px;
+        padding-left: 28px;
+      }
+      .months::before {
+        content: "";
+        position: absolute;
+        left: 9px;
+        top: 6px;
+        bottom: 6px;
+        width: 2px;
+        background: var(--line-strong);
+      }
+      .month {
+        position: relative;
+        padding: 22px 0 28px 0;
+        border-bottom: 1px dashed rgba(255, 255, 255, 0.14);
+      }
+      .month:last-child {
+        border-bottom: 0;
+      }
+      .month::before {
+        content: "";
+        position: absolute;
+        left: -28px;
+        top: 28px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: var(--bg);
+        border: 3px solid var(--ma-orange);
+      }
+      .month .head {
+        display: flex;
+        align-items: baseline;
+        gap: 14px;
+        margin-bottom: 10px;
+        flex-wrap: wrap;
+      }
+      .month .m-en {
+        font-family: "Inter", sans-serif;
+        font-size: 22px;
+        letter-spacing: -0.01em;
+        color: var(--ma-orange);
+        font-weight: 800;
+      }
+      .month .m-ko {
+        font-size: 20px;
+        font-weight: 800;
+        color: var(--text-1);
+        letter-spacing: -0.015em;
+      }
+      .month .m-desc {
+        font-size: 15px;
+        line-height: 1.75;
+        color: var(--text-2);
+      }
+      .month .m-desc strong {
+        color: var(--text-1);
+        font-weight: 700;
+      }
 
-  .pinned-note {
-    margin-top: 30px;
-    padding: 24px 26px;
-    background: rgba(245,130,32,0.12);
-    border: 1px solid rgba(245,130,32,0.5);
-    border-radius: 14px;
-    display: grid; grid-template-columns: 44px 1fr; gap: 18px; align-items: center;
-  }
-  .pinned-note .icn {
-    width: 44px; height: 44px; border-radius: 10px;
-    background: var(--ma-orange);
-    display: flex; align-items: center; justify-content: center;
-    font-weight: 800; font-size: 22px; color: #FFF;
-    font-family: 'Inter', sans-serif;
-  }
-  .pinned-note .txt {
-    font-size: 15px; line-height: 1.7; color: var(--text-1);
-    font-weight: 600;
-  }
-  .pinned-note .txt strong { color: var(--ma-orange); font-weight: 800; }
+      .pinned-note {
+        margin-top: 30px;
+        padding: 24px 26px;
+        background: rgba(245, 130, 32, 0.12);
+        border: 1px solid rgba(245, 130, 32, 0.5);
+        border-radius: 14px;
+        display: grid;
+        grid-template-columns: 44px 1fr;
+        gap: 18px;
+        align-items: center;
+      }
+      .pinned-note .icn {
+        width: 44px;
+        height: 44px;
+        border-radius: 10px;
+        background: var(--ma-orange);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        font-size: 22px;
+        color: #fff;
+        font-family: "Inter", sans-serif;
+      }
+      .pinned-note .txt {
+        font-size: 15px;
+        line-height: 1.7;
+        color: var(--text-1);
+        font-weight: 600;
+      }
+      .pinned-note .txt strong {
+        color: var(--ma-orange);
+        font-weight: 800;
+      }
 
-  /* 7. 지원 사항 */
-  .benefits { padding: 80px 72px 90px; background: var(--bg-alt); }
-  .benefits-grid {
-    margin-top: 32px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-  }
-  .benefit {
-    background: var(--card);
-    border: 1px solid var(--line);
-    border-radius: 18px;
-    padding: 28px 26px;
-  }
-  .benefit .num {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12px; font-weight: 700; letter-spacing: 0.2em;
-    color: var(--ma-orange);
-    margin-bottom: 14px;
-    display: flex; align-items: center; gap: 10px;
-  }
-  .benefit .num .ico {
-    width: 32px; height: 32px; border-radius: 8px;
-    background: rgba(245,130,32,0.15);
-    border: 1px solid rgba(245,130,32,0.5);
-    display: flex; align-items: center; justify-content: center;
-    color: var(--ma-orange);
-    font-family: 'Inter', sans-serif;
-    font-size: 13px;
-    font-weight: 800;
-  }
-  .benefit .t {
-    font-size: 19px; font-weight: 800; color: var(--text-1);
-    letter-spacing: -0.015em; margin: 0;
-  }
+      /* 7. 지원 사항 */
+      .benefits {
+        padding: 80px 72px 90px;
+        background: var(--bg-alt);
+      }
+      .benefits-grid {
+        margin-top: 32px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+      }
+      .benefit {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 28px 26px;
+      }
+      .benefit .num {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        color: var(--ma-orange);
+        margin-bottom: 14px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .benefit .num .ico {
+        width: 32px;
+        height: 32px;
+        border-radius: 8px;
+        background: rgba(245, 130, 32, 0.15);
+        border: 1px solid rgba(245, 130, 32, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--ma-orange);
+        font-family: "Inter", sans-serif;
+        font-size: 13px;
+        font-weight: 800;
+      }
+      .benefit .t {
+        font-size: 19px;
+        font-weight: 800;
+        color: var(--text-1);
+        letter-spacing: -0.015em;
+        margin: 0;
+      }
 
-  /* 8. CTA */
-  .cta {
-    padding: 90px 72px 70px;
-    background:
-      radial-gradient(700px 450px at 20% 100%, rgba(245,130,32,0.18), transparent 70%),
-      linear-gradient(180deg, var(--bg) 0%, var(--deep) 100%);
-    position: relative;
-    border-top: 1px solid var(--line);
-  }
-  .cta-title {
-    font-family: 'Pretendard Variable', sans-serif;
-    font-size: 42px; line-height: 1.3;
-    letter-spacing: -0.02em;
-    margin: 20px 0 30px;
-    color: var(--text-1);
-    font-weight: 800;
-  }
-  .cta-box {
-    background: rgba(255,255,255,0.06);
-    border: 1px solid var(--line-strong);
-    border-radius: 18px;
-    padding: 10px 36px;
-    display: grid;
-    grid-template-columns: 1fr;
-  }
-  .cta-box .row {
-    display: grid;
-    grid-template-columns: 130px 1fr;
-    gap: 20px;
-    align-items: center;
-    padding: 24px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.14);
-  }
-  .cta-box .row:last-child { border-bottom: 0; }
-  .cta-box .k {
-    font-size: 16px; font-weight: 700;
-    color: var(--text-3);
-    letter-spacing: -0.01em;
-  }
-  .cta-box .v {
-    font-size: 20px;
-    font-weight: 800;
-    color: var(--text-1);
-    line-height: 1.5;
-    letter-spacing: -0.02em;
-    font-family: 'Pretendard Variable', sans-serif;
-    white-space: nowrap;
-  }
-  .cta-box .v .arrow { color: var(--ma-orange); margin: 0 6px; font-weight: 600; }
+      /* 8. CTA */
+      .cta {
+        padding: 90px 72px 70px;
+        background:
+          radial-gradient(
+            700px 450px at 20% 100%,
+            rgba(245, 130, 32, 0.18),
+            transparent 70%
+          ),
+          linear-gradient(180deg, var(--bg) 0%, var(--deep) 100%);
+        position: relative;
+        border-top: 1px solid var(--line);
+      }
+      .cta-title {
+        font-family: "Pretendard Variable", sans-serif;
+        font-size: 42px;
+        line-height: 1.3;
+        letter-spacing: -0.02em;
+        margin: 20px 0 30px;
+        color: var(--text-1);
+        font-weight: 800;
+      }
+      .cta-box {
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid var(--line-strong);
+        border-radius: 18px;
+        padding: 10px 36px;
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+      .cta-box .row {
+        display: grid;
+        grid-template-columns: 130px 1fr;
+        gap: 20px;
+        align-items: center;
+        padding: 24px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+      }
+      .cta-box .row:last-child {
+        border-bottom: 0;
+      }
+      .cta-box .k {
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--text-3);
+        letter-spacing: -0.01em;
+      }
+      .cta-box .v {
+        font-size: 20px;
+        font-weight: 800;
+        color: var(--text-1);
+        line-height: 1.5;
+        letter-spacing: -0.02em;
+        font-family: "Pretendard Variable", sans-serif;
+        white-space: nowrap;
+      }
+      .cta-box .v .arrow {
+        color: var(--ma-orange);
+        margin: 0 6px;
+        font-weight: 600;
+      }
 
-  /* Footer */
-  .footer {
-    padding: 50px 72px 70px;
-    background: var(--deep);
-    border-top: 1px solid var(--line);
-    display: flex; align-items: flex-end; justify-content: space-between;
-  }
-  .footer .l { display: flex; align-items: center; gap: 14px; }
-  .footer .logo-mark-sm {
-    width: 36px; height: 36px; border-radius: 8px;
-    background: var(--ma-orange);
-    display: flex; align-items: center; justify-content: center;
-    color: #FFF; font-family: 'Inter', sans-serif;
-    font-size: 14px; font-weight: 800; letter-spacing: 0.04em;
-  }
-  .footer .brand-line { font-size: 14px; font-weight: 800; letter-spacing: 0.06em; color: var(--text-1); }
-  .footer .brand-line span { color: var(--ma-orange); }
-  .footer .brand-sub { font-size: 11px; color: var(--text-4); margin-top: 4px; font-family: 'JetBrains Mono', monospace; letter-spacing: 0.14em; text-transform: uppercase; }
-  .footer .r {
-    text-align: right;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px; letter-spacing: 0.2em; color: var(--text-4);
-    text-transform: uppercase;
-  }
-  .footer .r .code { color: var(--ma-orange); font-weight: 700; display: block; margin-bottom: 4px; }
+      /* Footer */
+      .footer {
+        padding: 50px 72px 70px;
+        background: var(--deep);
+        border-top: 1px solid var(--line);
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+      }
+      .footer .l {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+      .footer .logo-mark-sm {
+        width: 36px;
+        height: 36px;
+        border-radius: 8px;
+        background: var(--ma-orange);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-family: "Inter", sans-serif;
+        font-size: 14px;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+      }
+      .footer .brand-line {
+        font-size: 14px;
+        font-weight: 800;
+        letter-spacing: 0.06em;
+        color: var(--text-1);
+      }
+      .footer .brand-line span {
+        color: var(--ma-orange);
+      }
+      .footer .brand-sub {
+        font-size: 11px;
+        color: var(--text-4);
+        margin-top: 4px;
+        font-family: "JetBrains Mono", monospace;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+      .footer .r {
+        text-align: right;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        color: var(--text-4);
+        text-transform: uppercase;
+      }
+      .footer .r .code {
+        color: var(--ma-orange);
+        font-weight: 700;
+        display: block;
+        margin-bottom: 4px;
+      }
 
-  /* 데코 스트라이프 */
-  .stripe {
-    height: 8px;
-    background: repeating-linear-gradient(
-      135deg,
-      var(--ma-orange) 0 24px,
-      var(--deep) 24px 48px
-    );
-  }
-</style>
-</head>
-<body>
-  <div class="banner">
-
-    <!-- TOP BAR -->
-    <div class="topbar">
-      <div class="logo-area">
-        <div class="logo-mark">MA</div>
-        <div class="logo-text">MIRAE ASSET <span>LIFE</span></div>
-      </div>
-      <div>AI INNOVATION · 2026</div>
-    </div>
-
-    <!-- 1. HERO -->
-    <section class="hero">
-      <div class="hero-bg"></div>
-      <div class="hero-grid"></div>
-      <div class="hero-inner">
-
-        <div class="kicker">
-          <span class="dot"></span>
-          <span>RECRUITMENT 2026</span>
+      /* 데코 스트라이프 */
+      .stripe {
+        height: 8px;
+        background: repeating-linear-gradient(
+          135deg,
+          var(--ma-orange) 0 24px,
+          var(--deep) 24px 48px
+        );
+      }
+    </style>
+  </head>
+  <body>
+    <div class="banner">
+      <!-- TOP BAR -->
+      <div class="topbar">
+        <div class="logo-area">
+          <div class="logo-text">MIRAE ASSET <span>LIFE</span></div>
         </div>
+        <div>AI INNOVATION · 2026</div>
+      </div>
 
-        <h1 class="hero-title">
-          <span class="l-1">AI</span>
-          <span class="l-2">Champion</span>
-          <span class="l-3">2026.</span>
-        </h1>
+      <!-- 1. HERO -->
+      <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-grid"></div>
+        <div class="hero-inner">
+          <div class="kicker">
+            <span class="dot"></span>
+            <span>RECRUITMENT 2026</span>
+          </div>
 
-        <p class="hero-ko">
-          <strong>AI 챔피언</strong> 모집을 공지합니다.<br />
-          아래 내용을 확인한 후 지원 바랍니다.
+          <h1 class="hero-title">
+            <span class="l-1">AI</span>
+            <span class="l-2">Champion</span>
+            <span class="l-3">2026.</span>
+          </h1>
+
+          <p class="hero-ko">
+            <strong>AI 챔피언</strong> 모집을 공지합니다.<br />
+            아래 내용을 확인한 후 지원 바랍니다.
+          </p>
+        </div>
+      </section>
+
+      <div class="stripe"></div>
+
+      <!-- 2. ABOUT -->
+      <section class="section about">
+        <div class="eyebrow">// 01 · AI 챔피언이란?</div>
+        <h2 class="h2">AI 챔피언이란?</h2>
+        <p class="body">
+          AI 챔피언은
+          <strong
+            >본인 현업에서 AI를 직접 적용하여 업무 방식을 바꾸고,<br />
+            그 결과를 조직 내로 확산시키는 실무형 리더</strong
+          >입니다.
         </p>
-      </div>
-    </section>
+        <p class="body">
+          이제 AI는 단순한 기술을 넘어,
+          <strong>업무의 표준이자 개인의 핵심 경쟁력</strong>이 되었습니다.<br />
+          이번 AI 챔피언 프로그램은 여러분이 AI 기술의 선두주자로 성장하고,<br />
+          자신의 업무 영역에서 혁신을 주도하며 회사와 함께 미래를 만들어갈
+          기회입니다.<br />
+          미래에셋생명은 여러분의 도전을 통해 조직 전체의 AI 역량을 한 단계
+          끌어올리고자 합니다.
+        </p>
+      </section>
 
-    <div class="stripe"></div>
+      <!-- 3. 주요 역할 -->
+      <section class="section roles">
+        <div class="eyebrow">// 주요 역할</div>
+        <h2 class="h2">
+          선발 이후 <em>6개월간</em><br />다음 세 가지 역할을 수행합니다.
+        </h2>
+        <p class="body">
+          단순 학습 프로그램이 아닌,<br />
+          <strong>실질적인 성과 도출과 조직 내 확산을 책임지는 역할</strong
+          >임을<br />
+          충분히 이해한 후 지원 바랍니다.
+        </p>
 
-    <!-- 2. ABOUT -->
-    <section class="section about">
-      <div class="eyebrow">// 01 · AI 챔피언이란?</div>
-      <h2 class="h2">AI 챔피언이란?</h2>
-      <p class="body">
-        AI 챔피언은 <strong>본인 현업에서 AI를 직접 적용하여 업무 방식을 바꾸고,<br />
-        그 결과를 조직 내로 확산시키는 실무형 리더</strong>입니다.
-      </p>
-      <p class="body">
-        생성형 AI는 이미 실무 적용이 가능한 수준까지 올라와 있으며,<br />
-        업권 전반에서 AI 기반 업무 재설계가 빠르게 진행되고 있습니다.<br />
-        미래에셋생명 역시 이 흐름에 대응하기 위해<br />
-        <span class="hi">각 현업에서 AI를 직접 설계·적용할 수 있는 인력의 확보가 시급</span>하며,<br />
-        이는 향후 조직 경쟁력을 좌우할 핵심 과제입니다.
-      </p>
-    </section>
-
-    <!-- 3. 주요 역할 -->
-    <section class="section roles">
-      <div class="eyebrow">// 주요 역할</div>
-      <h2 class="h2">선발 이후 <em>6개월간</em><br />다음 세 가지 역할을 수행합니다.</h2>
-      <p class="body">
-        단순 학습 프로그램이 아닌,<br />
-        <strong>실질적인 성과 도출과 조직 내 확산을 책임지는 역할</strong>임을<br />
-        충분히 이해한 후 지원 바랍니다.
-      </p>
-
-      <div class="roles-grid">
-        <div class="role-card">
-          <div class="role-num">01</div>
-          <div>
-            <h3 class="role-title">Use Case 발굴</h3>
-            <p class="role-desc">
-              본인 부서의 <strong>반복·비효율 업무</strong> 중<br />
-              AI 적용 대상 탐색
-            </p>
+        <div class="roles-grid">
+          <div class="role-card">
+            <div class="role-num">01</div>
+            <div>
+              <h3 class="role-title">Use Case 발굴</h3>
+              <p class="role-desc">
+                본인 부서의 <strong>반복·비효율 업무</strong> 중<br />
+                AI 적용 대상 탐색
+              </p>
+            </div>
           </div>
-        </div>
-        <div class="role-card">
-          <div class="role-num">02</div>
-          <div>
-            <h3 class="role-title">실제 업무 적용 및 성과 창출</h3>
-            <p class="role-desc">
-              노코드·생성형 AI 기반 자동화 구축을 통한<br />
-              <strong>시간 · 비용 · 퀄리티</strong> 개선
-            </p>
+          <div class="role-card">
+            <div class="role-num">02</div>
+            <div>
+              <h3 class="role-title">실제 업무 적용 및 성과 창출</h3>
+              <p class="role-desc">
+                노코드·생성형 AI 기반 자동화 구축을 통한<br />
+                <strong>시간 · 비용 · 퀄리티</strong> 개선
+              </p>
+            </div>
           </div>
-        </div>
-        <div class="role-card">
-          <div class="role-num">03</div>
-          <div>
-            <h3 class="role-title">확산 및 교육</h3>
-            <p class="role-desc">
-              성과를 <strong>조직 내 표준으로 정리</strong>하고<br />
-              본부 단위 확산 교육 수행
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 4. 모집 개요 -->
-    <section class="recruit">
-      <div class="section-num">02 · RECRUITMENT</div>
-      <h2>모집 개요</h2>
-
-      <div class="info-list">
-        <div class="row">
-          <div class="lbl">선발 인원</div>
-          <div class="val"><strong>25명 이내</strong> <span class="sub">직군 무관</span></div>
-        </div>
-
-        <div class="row">
-          <div class="lbl">과정 기간</div>
-          <div class="val"><strong>6개월</strong> <span class="sub">2026. 6 ~ 2026. 11</span></div>
-        </div>
-
-        <div class="row">
-          <div class="lbl">선발 기준</div>
-          <div class="val">
-            <div class="criteria-list">
-              <div class="cri-line"><strong>AI 기술 관심도</strong> AI 기술 전반에 대한 관심과 학습 의지 <span class="cri-pct">40%</span></div>
-              <div class="cri-line"><strong>업무 개선 기획력</strong> 현업 문제 정의 및 AI 기반 해결 방안의 구체성 <span class="cri-pct">30%</span></div>
-              <div class="cri-line"><strong>실행·추진 역량</strong> 6개월 과정 완주 및 성과 도출 실행력 <span class="cri-pct">30%</span></div>
-              <div class="recruit-note">※ 필요 시 인터뷰 등 추가 전형이 진행될 수 있습니다.</div>
+          <div class="role-card">
+            <div class="role-num">03</div>
+            <div>
+              <h3 class="role-title">확산 및 교육</h3>
+              <p class="role-desc">
+                성과를 <strong>조직 내 표준으로 정리</strong>하고<br />
+                본부 단위 확산 교육 수행
+              </p>
             </div>
           </div>
         </div>
+      </section>
 
-        <div class="row">
-          <div class="lbl">접수 기간</div>
-          <div class="val">
-            <span class="hl">2026. 4. 30 (목) 13:00</span> ~ <span class="hl">2026. 5. 11 (월) 18:00</span>
+      <!-- 4. 모집 개요 -->
+      <section class="recruit">
+        <div class="section-num">02 · RECRUITMENT</div>
+        <h2>모집 개요</h2>
+
+        <div class="info-list">
+          <div class="row">
+            <div class="lbl">선발 인원</div>
+            <div class="val">
+              <strong>25명 이내</strong> <span class="sub">직군 무관</span>
+            </div>
           </div>
-        </div>
 
-        <div class="row">
-          <div class="lbl">대상자 발표</div>
-          <div class="val"><strong>2026. 5. 15 (금)</strong></div>
-        </div>
+          <div class="row">
+            <div class="lbl">과정 기간</div>
+            <div class="val">
+              <strong>6개월</strong> <span class="sub">2026. 6 ~ 2026. 11</span>
+            </div>
+          </div>
 
-        <div class="row">
-          <div class="lbl">지원 방식</div>
-          <div class="val">
-            <div class="apply-simple">
-              <div class="line"><strong>1. 일반 지원</strong>본인이 직접 지원</div>
-              <div class="line"><strong>2. 부서장 추천</strong>소속 부서장 추천 시 평가 시 가산점 부여<span class="mini-badge">가산점</span></div>
+          <div class="row">
+            <div class="lbl">선발 기준</div>
+            <div class="val">
+              <div class="criteria-list">
+                <div class="cri-line">
+                  <strong>AI 기술 관심도</strong> AI 기술 전반에 대한 관심과
+                  학습 의지 <span class="cri-pct">40%</span>
+                </div>
+                <div class="cri-line">
+                  <strong>업무 개선 기획력</strong> 현업 문제 정의 및 AI 기반
+                  해결 방안의 구체성 <span class="cri-pct">30%</span>
+                </div>
+                <div class="cri-line">
+                  <strong>실행·추진 역량</strong> 6개월 과정 완주 및 성과 도출
+                  실행력 <span class="cri-pct">30%</span>
+                </div>
+                <div class="recruit-note">
+                  ※ 필요 시 인터뷰 등 추가 전형이 진행될 수 있습니다.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="lbl">접수 기간</div>
+            <div class="val">
+              <span class="hl">2026. 4. 30 (목) 13:00</span> ~
+              <span class="hl">2026. 5. 11 (월) 18:00</span>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="lbl">대상자 발표</div>
+            <div class="val"><strong>2026. 5. 15 (금)</strong></div>
+          </div>
+
+          <div class="row">
+            <div class="lbl">지원 방식</div>
+            <div class="val">
+              <div class="apply-simple">
+                <div class="line">
+                  <strong>1. 일반 지원</strong>본인이 직접 지원
+                </div>
+                <div class="line">
+                  <strong>2. 부서장 추천</strong>소속 부서장 추천 시 평가 시
+                  가산점 부여<span class="mini-badge">가산점</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+      </section>
+
+      <div class="stripe"></div>
+
+      <!-- 5. 프로그램 과정 -->
+      <section class="section timeline-sec">
+        <div class="eyebrow">// 03 · 프로그램 과정</div>
+        <h2 class="h2">프로그램 과정<br /><em>6월 ~ 11월</em></h2>
+
+        <div class="months">
+          <div class="month">
+            <div class="head">
+              <span class="m-en">JUN.</span>
+              <span class="m-ko">6월</span>
+            </div>
+            <div class="m-desc">
+              <strong>AI 기초교육</strong><br />
+              주 1회(8시간) × 4회
+            </div>
+          </div>
+
+          <div class="month">
+            <div class="head">
+              <span class="m-en">JUL.</span>
+              <span class="m-ko">7월</span>
+            </div>
+            <div class="m-desc">
+              <strong>AI 심화교육</strong><br />
+              교육지원금(월 20만원)을 활용한 자기계발<br />
+              (외부 세미나, 온라인 강의 등)<br />
+              매주 공부 내용을 AI 게시판에 게시
+            </div>
+          </div>
+
+          <div class="month">
+            <div class="head">
+              <span class="m-en">AUG — OCT.</span>
+              <span class="m-ko">8월 ~ 10월</span>
+            </div>
+            <div class="m-desc">
+              <strong>문제해결 과제 선정 및 개발</strong><br />
+              과제 진행 과정도 AI 게시판에 지속 게시
+            </div>
+          </div>
+
+          <div class="month">
+            <div class="head">
+              <span class="m-en">NOV.</span>
+              <span class="m-ko">11월</span>
+            </div>
+            <div class="m-desc">
+              <strong>발표회</strong><br />
+              우수 사례는 콘텐츠로 전환하여 전사 전파<br />
+              발표 준비·결과도 AI 게시판 게시
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. 지원 사항 -->
+      <section class="section benefits">
+        <div class="eyebrow">// 04 · 지원 사항</div>
+        <h2 class="h2">지원 <em>사항</em></h2>
+
+        <div class="benefits-grid">
+          <div class="benefit">
+            <div class="num"><div class="ico">01</div></div>
+            <h3 class="t">최신 노트북 지급</h3>
+          </div>
+          <div class="benefit">
+            <div class="num"><div class="ico">02</div></div>
+            <h3 class="t">
+              생성형 AI 툴 지원<br /><span
+                style="font-weight: 600; font-size: 14px; color: var(--text-3)"
+                >(예: Claude Max)</span
+              >
+            </h3>
+          </div>
+          <div class="benefit">
+            <div class="num"><div class="ico">03</div></div>
+            <h3 class="t">상시 개발 가능<br />환경(장소) 제공</h3>
+          </div>
+          <div class="benefit">
+            <div class="num"><div class="ico">04</div></div>
+            <h3 class="t">
+              월 20만원 활동 예산<br /><span
+                style="font-weight: 600; font-size: 14px; color: var(--text-3)"
+                >(6월 ~ 11월, 총 6개월)</span
+              >
+            </h3>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. CTA -->
+      <div class="cta">
+        <div class="eyebrow">// APPLY</div>
+        <h2 class="cta-title">
+          많은 관심과
+          <em style="font-style: normal; color: var(--ma-orange)">지원</em>
+          바랍니다.
+        </h2>
+
+        <div class="cta-box">
+          <div class="row">
+            <div class="k">접수 기간</div>
+            <div class="v">
+              2026. 4. 30 (목) 13:00 <span class="arrow">~</span> 2026. 5. 11
+              (월) 18:00
+            </div>
+          </div>
+          <div class="row">
+            <div class="k">대상자 발표</div>
+            <div class="v">2026. 5. 15 (금)</div>
+          </div>
+        </div>
       </div>
-    </section>
 
-    <div class="stripe"></div>
-
-    <!-- 5. 프로그램 과정 -->
-    <section class="section timeline-sec">
-      <div class="eyebrow">// 03 · 프로그램 과정</div>
-      <h2 class="h2">프로그램 과정<br /><em>6월 ~ 11월</em></h2>
-
-      <div class="months">
-        <div class="month">
-          <div class="head">
-            <span class="m-en">JUN.</span>
-            <span class="m-ko">6월</span>
-          </div>
-          <div class="m-desc">
-            <strong>AI 기초교육</strong><br />
-            주 1회(8시간) × 4회
+      <!-- FOOTER -->
+      <div class="footer">
+        <div class="l">
+          <div class="logo-mark-sm">MA</div>
+          <div>
+            <div class="brand-line">MIRAE ASSET <span>LIFE</span></div>
+            <div class="brand-sub">AI Innovation · 2026</div>
           </div>
         </div>
-
-        <div class="month">
-          <div class="head">
-            <span class="m-en">JUL.</span>
-            <span class="m-ko">7월</span>
-          </div>
-          <div class="m-desc">
-            <strong>AI 심화교육</strong><br />
-            교육지원금(월 20만원)을 활용한 자기계발<br />
-            (외부 세미나, 온라인 강의 등)<br />
-            매주 공부 내용을 AI 게시판에 게시
-          </div>
-        </div>
-
-        <div class="month">
-          <div class="head">
-            <span class="m-en">AUG — OCT.</span>
-            <span class="m-ko">8월 ~ 10월</span>
-          </div>
-          <div class="m-desc">
-            <strong>문제해결 과제 선정 및 개발</strong><br />
-            과제 진행 과정도 AI 게시판에 지속 게시
-          </div>
-        </div>
-
-        <div class="month">
-          <div class="head">
-            <span class="m-en">NOV.</span>
-            <span class="m-ko">11월</span>
-          </div>
-          <div class="m-desc">
-            <strong>발표회</strong><br />
-            우수 사례는 콘텐츠로 전환하여 전사 전파<br />
-            발표 준비·결과도 AI 게시판 게시
-          </div>
-        </div>
-      </div>
-
-    </section>
-
-    <!-- 6. 지원 사항 -->
-    <section class="section benefits">
-      <div class="eyebrow">// 04 · 지원 사항</div>
-      <h2 class="h2">지원 <em>사항</em></h2>
-
-      <div class="benefits-grid">
-        <div class="benefit">
-          <div class="num"><div class="ico">01</div></div>
-          <h3 class="t">최신 노트북 지급</h3>
-        </div>
-        <div class="benefit">
-          <div class="num"><div class="ico">02</div></div>
-          <h3 class="t">생성형 AI 툴 지원<br /><span style="font-weight:600;font-size:14px;color:var(--text-3);">(예: Claude Max)</span></h3>
-        </div>
-        <div class="benefit">
-          <div class="num"><div class="ico">03</div></div>
-          <h3 class="t">상시 개발 가능<br />환경(장소) 제공</h3>
-        </div>
-        <div class="benefit">
-          <div class="num"><div class="ico">04</div></div>
-          <h3 class="t">월 20만원 활동 예산<br /><span style="font-weight:600;font-size:14px;color:var(--text-3);">(6월 ~ 11월, 총 6개월)</span></h3>
-        </div>
-      </div>
-    </section>
-
-    <!-- 7. CTA -->
-    <div class="cta">
-      <div class="eyebrow">// APPLY</div>
-      <h2 class="cta-title">
-        많은 관심과 <em style="font-style:normal;color:var(--ma-orange);">지원</em> 바랍니다.
-      </h2>
-
-      <div class="cta-box">
-        <div class="row">
-          <div class="k">접수 기간</div>
-          <div class="v">2026. 4. 30 (목) 13:00 <span class="arrow">~</span> 2026. 5. 11 (월) 18:00</div>
-        </div>
-        <div class="row">
-          <div class="k">대상자 발표</div>
-          <div class="v">2026. 5. 15 (금)</div>
+        <div class="r">
+          <div class="code">AI-CHAMPION / 2026</div>
+          <div>© MIRAE ASSET LIFE</div>
         </div>
       </div>
     </div>
-
-    <!-- FOOTER -->
-    <div class="footer">
-      <div class="l">
-        <div class="logo-mark-sm">MA</div>
-        <div>
-          <div class="brand-line">MIRAE ASSET <span>LIFE</span></div>
-          <div class="brand-sub">AI Innovation · 2026</div>
-        </div>
-      </div>
-      <div class="r">
-        <div class="code">AI-CHAMPION / 2026</div>
-        <div>© MIRAE ASSET LIFE</div>
-      </div>
-    </div>
-
-  </div>
-</body>
+  </body>
 </html>
